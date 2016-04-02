@@ -1,4 +1,7 @@
-test_*
+.DS_Store
+.ropeproject
 *.pyc
-models/
-*.html
+tags
+*.swp
+*.sqlite
+upload/

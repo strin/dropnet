@@ -27,7 +27,6 @@ class Weight(object):
         else:
             self.np_values = np.cast[theano.config.floatX](
                 mean * np.ones(w_shape, dtype=theano.config.floatX))
-
         self.val = theano.shared(value=self.np_values)
 
     def save_weight(self, dir, name):

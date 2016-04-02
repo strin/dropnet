@@ -1,4 +1,4 @@
-# If want to input None, use !!null
+batch_size: 256 # def: 256
 
 # Resume Training, start from scratch or resume training
 resume_train: False
@@ -16,7 +16,6 @@ use_data_layer: False
 rand_crop: True # def: True
 shuffle: False # def: False, if shuffle the batches
 para_load: True
-batch_crop_mirror: False  # if False, do randomly on each image separately
 
 # Momentum
 use_momentum : True # def: True
@@ -27,13 +26,16 @@ momentum: 0.9 # def: 0.9
 weight_decay: 0.0005 # def: 0.0005
 
 # Directories
-label_folder: /scratch/ilsvrc12/labels/
-mean_file: /scratch/ilsvrc12/misc/img_mean.npy
-weights_dir: ./models/  # directory for saving weights and results
+train_file: ../data/imagenet/train10.lmdb
+test_file: ../data/imagenet/test10.lmdb
+mean_file: ../data/imagenet/mean.lmdb
+weights_dir: ../models/alexnet_python  # directory for saving weights and results
 
 # conv library
-lib_conv: cudnn  # or cudaconvnet
+lib_conv: cudaconvnet
 
 snapshot_freq: 1  # frequency of saving weights
 print_train_error: True
 print_freq: 20  # frequency of printing training error rate
+
+gpu: 'gpu0'
